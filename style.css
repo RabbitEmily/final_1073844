@@ -2,14 +2,19 @@
   margin:0;
   padding:0;
   list-style:none;
+  font-family:arial;
+  color:#fff;
 }
 #menu-control{
-  position:absolute;
+  position:fixed;
   z-index:-2;
   opacity:0;
 }
 .header{
-  height:50px;
+  position:fixed;
+  right:0;
+  width:100%;
+  height:60px;
   background-color:#ccc;
 }
 .logo{
@@ -20,29 +25,18 @@
 .menu-button{
   width:40px; 
   height:40px;
-  background-color: #000;
+  background-color: #8c7272;
   display:block;
-  position:absolute;
+  position:fixed;
   top:5px;
-  right:10px;
+  right:6px;
 }
-.menu-button:before{
-  content:'';
-  position:absolute;
-  height:2px;
-  left:2px;
-  width:36px;
-  background-color: #aaa;
-  top:0;
-  bottom:0;
-  margin:auto;
-  box-shadow: 0px 8px 0px #aaa,0px -8px 0px #aaa;
-}
+
 nav{
   width:80%;
   height:calc(100vh-50px);
   background-color:#fcc;
-  position:absolute;
+  position:fixed;
   top:50px;
   left:-100%;
   transition: 0.5s;
@@ -67,6 +61,7 @@ nav a{
     justify-content:space-between;
     background-color:#fcc;
     align-items:center;
+    z-index:5;
   }
   nav{
     position:relative;
@@ -79,31 +74,35 @@ nav a{
   }
 }
 
+h1{
+  font-size:32px;
+  color:#fff;
+}
+.p1{
+  background-color:#fff;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+.p2{
+  background-color:#f5f5e6;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+.p3{
+  background-color:#fff;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
+.p4{
+  background-color:#f5f5e6;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height:100vh;
+}
 
-.Page1{
-  background-color:#fff;
-  background-size:cover;
-  background-repeat: no-repeat;
-  height:100vh;
-}
-.Page2{
-  background-color:#f5f5e6;
-  background-size:cover;
-  background-repeat: no-repeat;
-  height:100vh;
-}
-.Page3{
-  background-color:#fff;
-  background-size:cover;
-  background-repeat: no-repeat;
-  height:100vh;
-}
-.Page4{
-  background-color:#f5f5e6;
-  background-size:cover;
-  background-repeat: no-repeat;
-  height:100vh;
-}
 .spot{
   position: fixed;
   top:50%;
@@ -119,7 +118,238 @@ li{
   box-shadow: 1px 1px 1px gray inset,-1px -1px 1px gray inset;
   list-style-type: none;
 }
-h1{
-  font-size:60px;
-  color:black;
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container2 {
+  display:flex;
+  background-color: #eee;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.cradle{
+  padding: 0 3em 3em;
+  border-top: .25em solid #3E2723;
+  border-left: .25em solid #3E2723;
+  border-right: .25em solid #3E2723;
+  border-radius: 3px 3px 0 0;
+  
+}
+.cradle-stand{
+  height: 1em;
+  width: 20em;
+  background-color: #3E2723;
+  border-radius: 3px;
+}
+.balls {
+  display: flex;
+}
+.strings {
+  display: flex;
+}
+.item {
+  background-color: #424242;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+}
+.string {
+  width: .2em;
+  height: 8em;
+  background-color: #424242;
+  margin: 0 auto;
+  
+}
+.item:nth-child(1){  
+  transform-origin: 50% -400%;
+  animation: swing1 1s linear infinite;
+}
+.string:nth-child(1){
+  transform-origin: top;
+  animation: swing1 1s linear infinite;
+}
+@keyframes swing1{  
+  0%{
+    transform: rotate(15deg);
+  }  
+  25%,75%{
+    transform: rotate(0deg);  
+  }
+  100%{
+    transform: rotate(15deg);
+  }  
+}
+.item:nth-child(5){  
+  transform-origin: 50% -400%;
+  animation: swing5 1s linear infinite;
+}
+.string:nth-child(5){  
+  transform-origin: top;
+  animation: swing5 1s linear infinite;
+}
+@keyframes swing5{
+  0%,25%{
+    transform: rotate(0deg);
+  }  
+  50%{
+    transform: rotate(-15deg);  
+  }
+  75%, 100%{
+    transform: rotate(0deg);
+  }  
+}
+
+:root {
+    --font-size: 5px;
+}
+
+.toggle {
+    position: absolute;
+    filter: opacity(0);
+    width: 25em;
+    height: 35em;
+    font-size: var(--font-size);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.window {
+    position: relative;
+    box-sizing: border-box;
+    width: 25em;
+    height: 35em;
+    font-size: var(--font-size);
+    background-color: #d9d9d9;
+    border-radius: 5em;
+    box-shadow: 
+        inset 0 0 8em rgba(0, 0, 0, 0.2),
+        0 0 0 0.4em #808080,
+        0 0 0 4em whitesmoke,
+        0 0 0 4.4em #808080,
+        0 2em 4em 4em rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.window .curtain {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: whitesmoke;
+    top: -5%;
+    border-radius: 5em;
+    box-shadow:
+        0 0 0 0.4em #808080,
+        0 0 3em rgba(0, 0, 0, 0.4);
+    transition: 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.toggle:checked ~ .window .curtain {
+    top: -90%;
+}
+
+.window .curtain::before {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 0.8em;
+    background-color: #808080;
+    left: 30%;
+    bottom: 1.6em;
+    border-radius: 0.4em;
+}
+
+.window .curtain::after {
+    content: '';
+    position: absolute;
+    width: 1.6em;
+    height: 0.8em;
+    bottom: 1.6em;
+    background-image: radial-gradient(orange, orangered);
+    left: calc((100% - 1.6em) / 2);
+    border-radius: 0.4em;
+}
+
+.toggle:checked ~ .window .curtain::after {
+    background-image: radial-gradient(lightgreen, limegreen);
+}
+
+.window .clouds {
+    position: relative;
+    width: 20em;
+    height: 30em;
+    background-color: deepskyblue;
+    left: calc((100% - 20em) / 2);
+    top: calc((100% - 30em) / 2);
+    border-radius: 7em;
+    box-shadow: 0 0 0 0.4em #808080;
+    overflow: hidden;
+}
+
+.clouds span {
+    position: absolute;
+    width: 10em;
+    height: 4em;
+    background-color: white;
+    top: 20%;
+    border-radius: 4em;
+    animation: move 4s linear infinite;
+}
+
+@keyframes move {
+    from {
+        left: -150%;
+    }
+
+    to {
+        left: 150%;
+    }
+}
+
+.clouds span::before,
+.clouds span::after {
+    content: '';
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.clouds span::before {
+    top: -2em;
+    left: 2em;
+}
+
+.clouds span::after {
+    top: -1em;
+    right: 1em;
+}
+
+.clouds span:nth-child(2) {
+    top: 40%;
+    animation-delay: -1s;
+}
+
+.clouds span:nth-child(3) {
+    top: 60%;
+    animation-delay: -0.5s;
+}
+
+.clouds span:nth-child(4) {
+    top: 20%;
+    transform: scale(2);
+    animation-delay: -1.5s;
+}
+
+.clouds span:nth-child(5) {
+    top: 70%;
+    transform: scale(1.5);
+    animation-delay: -3s;
 }
