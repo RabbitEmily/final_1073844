@@ -10,16 +10,17 @@
 <!-- partial:index.partial.html -->
 <input type="checkbox" name="" id="menu-control">
 <div class="header">
-  <a href="https://rabbitemily.github.io/project/">Home</a>
+  <div class="Home">
+    <a href="https://rabbitemily.github.io/project/">Home</a>
+  </div>
   
   <label for="menu-control" class="menu-button">
     <span></span>
   </label>
   <nav>
     <a href="#Page1">Newton's Cradle</a> 
-    <a href="#Page2">待解鎖</a> 
-    <a href="#Page3">待解鎖</a>
-    <a href="#Page4">待解鎖</a>
+<!--     <a href="#Page2"></a>  -->
+    <a href="#Page3">Button Wall</a>
   </nav>
 </div>
 
@@ -35,53 +36,58 @@
     </div>
 </div>
 
-
-
-
-
 <div class="p1"><h1>Newton's Cradle</h1>  
-  <a id="Page1">  
+  <a id="Page1"> 
     <div class="container2">
-  <div class="cradle">  
+      <div class="cradle">  
       <div class="strings">
-      <div class="string"></div>
-      <div class="string"></div>
-      <div class="string"></div>
-      <div class="string"></div>
-      <div class="string"></div>
-    </div>
+        <div class="string"></div>
+        <div class="string"></div>
+        <div class="string"></div>
+        <div class="string"></div>
+        <div class="string"></div>
+      </div>
       <div class="balls">
-      <div class="item" id="ball1"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item" id="ball2"></div>      
+        <div class="item" id="ball1"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item" id="ball2"></div>      
+      </div>
+      </div>
+      <div class="cradle-stand"></div>
     </div>
-  </div>
-  <div class="cradle-stand"></div>
-</div>
   </a>
 </div>
+
 <a id="Page2"></a>
-<div class="p2"><h1>...</h1></div>
-<a id="Page3"></a>
-<div class="p3"><h1>...</h1></div>
-<a id="Page4"></a>
-<div class="p4"><h1>...</h1></div>
+<div class="p2"><h1></h1></div>
+
+<a id="Page3">
+<a href="#" onclick="playAudio()">
+<div class="ProductList">
+   <div class="ProductList__item">
+     <input type="checkbox" class="toggle">
+     <figure class="window">
+     <div class="curtain"></div>
+     </figure>
+   </div>
+</div>
+</a>
+</a>
+
+<div class="logo">
+  <h3>Emily</h3>
+</div>
 
 
-<input type="checkbox" class="toggle">
-<figure class="window">
-  <div class="curtain"></div>
-  <div class="clouds">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</figure>
+<audio id="audioID">
+  <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg">
+  <source src="http://iss240.net/tempfiles/menu-click/1.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
 <!-- partial -->
-  
+  <script  src="./script.js"></script>
+
 </body>
 </html>
